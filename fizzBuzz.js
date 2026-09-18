@@ -65,3 +65,23 @@ for (let i = 1; i <= number; i++) {
 //         console.log(i);
 //     }
 // }
+
+
+let input = parseInt(prompt(`Enter the number multiple by 3 and 5 `));
+let resultsArray = []; // Temporary container to store results safely
+console.log(resultsArray)
+for (let i = 1; i <= input; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        resultsArray.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+        resultsArray.push("Fizz");
+    } else if (i % 5 === 0) {
+        resultsArray.push("Buzz");
+    } else {
+        resultsArray.push(i); // Stores the raw number
+    }
+}
+
+// OUTSIDE THE LOOP: The loop is done. i is gone, but our array safely holds all data.
+// .join(", ") glues the array items into one clean string separated by commas.
+document.getElementById("mulArray").innerText = resultsArray.join(", ");
